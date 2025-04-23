@@ -90,7 +90,7 @@ Cornerstone implements [this strategy](https://philipwalton.com/articles/loading
 
 In `templates/components/common/polyfill-script.html` there is a simple feature detection script which can be extended to detect any recent JS features you intend to use in your theme code.
 
-If any one of the conditions is not met, an additional blocking JS bundle configured in `assets/js/polyfills.js` will be loaded to polyfill modern JS features before the main bundle executes. 
+If any one of the conditions is not met, an additional blocking JS bundle configured in `assets/js/polyfills.js` will be loaded to polyfill modern JS features before the main bundle executes.
 
 This intentionally prioritizes the experience of the 90%+ of shoppers who are on modern browsers in terms of performance, while maintaining compatibility (at the expense of additional JS download+parse for the polyfills) for users on legacy browsers.
 
@@ -144,3 +144,30 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+## Commands
+
+Install Volta: `curl https://get.volta.sh | bash` - NOTE: reload your terminal after install
+
+Setup Volta: `volta install @bigcommerce/stencil-cli@latest`
+
+Local Setup: `stencil init`
+
+Local Development: `stencil start`
+
+Publish Theme: `stencil push`
+
+## Issues
+
+### Something not working?
+
+Ensure your version of Node matches the one defined in `package.json`.
+
+Ensure the following is setup properly in your `config.stencil.json` file:
+
+* `normalStoreUrl` - point at the store you are publishing to
+* `customLayouts` - must contain the mappings for each one of the custom pages, they will return a 404 if not mapped correctly here
+
+Ensure the following is setup properly in your `secrets.stencil.json` file:
+
+* `accessToken` - point at the store you are publishing to
