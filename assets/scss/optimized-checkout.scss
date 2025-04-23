@@ -601,6 +601,11 @@ header.cart-header {
     margin-bottom: 0;
 }
 
+.form-field input:not(:placeholder-shown) + .floating-label {
+    line-height: 24px;
+    font-size: 14px;
+}
+
 .customerEmail-container {
     display: flex;
     align-items: center;
