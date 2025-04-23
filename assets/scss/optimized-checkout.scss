@@ -594,14 +594,14 @@ header.cart-header {
         line-height: 24px;
         font-size: 14px;
     }
-
 }
 
 .form-checkbox+.form-label {
     margin-bottom: 0;
 }
 
-.form-field input:not(:placeholder-shown) + .floating-label {
+.form-field input:not(:placeholder-shown) + .floating-label,
+.form-field select + .floating-label {
     line-height: 24px;
     font-size: 14px;
 }
