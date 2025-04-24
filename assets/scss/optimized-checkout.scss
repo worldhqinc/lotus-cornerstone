@@ -667,12 +667,18 @@ header.cart-header {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        flex-wrap: wrap;
         border: 1px solid #D4D4D4;
         border-radius: 8px;
         padding: 16px;
 
         > * {
             flex: 1 1 auto;
+        }
+
+        .form-checklist-body {
+            margin: 0;
+            flex: 1 1 100%;
         }
     }
 
