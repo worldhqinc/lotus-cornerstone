@@ -96,7 +96,7 @@ body {
 // Styles the CONTINUE button for each step, & the final confirmation button.
 // -----------------------------------------------------------------------------
 
-.optimizedCheckout-buttonPrimary, .cart-modal-continue {
+.optimizedCheckout-buttonPrimary, .cart-modal-continue, .button--small {
     position: relative;
     isolation: isolate;
     background-color: stencilColor("optimizedCheckout-buttonPrimary-backgroundColor");
@@ -631,6 +631,21 @@ header.cart-header {
     }
 }
 
+.paymentMethod {
+    .form-ccFields {
+        display: flex;
+        flex-direction: column;
+
+        @media (min-width: 551px) {
+            flex-direction: row;
+        }
+    }
+
+    .form-field + .form-field {
+        margin-top: 0;
+    }
+}
+
 .form-legend-container {
     margin: 0;
     margin-block: 16px;
@@ -931,4 +946,36 @@ header.cart-header {
 .cart-priceItem-label > span, .cart-priceItem-value > span {
     font-size: 16px !important;
     line-height: 150% !important;
+}
+
+.dropdown-toggle--select:focus,
+.dropdown-toggle--select:hover {
+    border-color: #333333 !important;
+}
+
+.dropdown-menu,
+.dropdown-menu--content {
+    box-shadow: none;
+}
+
+.dropdown-menu {
+    border-color: #333333;
+}
+
+.dropdown-menu-item--select {
+    border-bottom: 1px solid #333333 !important;
+
+    &:last-child {
+        border-bottom: none !important;
+    }
+
+    a {
+        &:after {
+            content: none !important;
+        }
+    }
+}
+
+.button:focus {
+    box-shadow: none !important;
 }
