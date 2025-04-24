@@ -781,6 +781,11 @@ header.cart-header {
 .optimizedCheckout-form-checklist-checkbox:checked ~ .form-label::after {
     background-color: #6E9365;
 }
+
+.optimizedCheckout-form-checklist-checkbox:focus ~ .form-label {
+    box-shadow: none;
+}
+
 // end form actions
 
 // checkout styles
