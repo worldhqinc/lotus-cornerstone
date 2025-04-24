@@ -998,3 +998,41 @@ header.cart-header {
 .button:focus {
     box-shadow: none !important;
 }
+// end checkout styles
+
+// order confirmation styles
+.orderConfirmation {
+    padding: 0;
+
+    .optimizedCheckout-headingPrimary {
+        font-family: stencilFontFamily("headings-font"), "Playfair Display", serif;
+        font-size: 40px;
+        line-height: 100%;
+        letter-spacing: -0.8px;
+        text-transform: uppercase;
+
+        @media (min-width: 969px) {
+            font-size: 60px;
+            letter-spacing: -1.2px;
+        }
+    }
+
+    p, span {
+        font-size: 16px;
+        line-height: 150%;
+    }
+}
+
+.layout.optimizedCheckout-contentPrimary:has(.orderConfirmation) {
+    display: flex;
+    gap: 80px;
+    padding-block: 32px;
+
+    @media (min-width: 969px) {
+        padding-block: 64px;
+    }
+}
+
+.layout-main:has(.orderConfirmation) {
+    border: none;
+}
