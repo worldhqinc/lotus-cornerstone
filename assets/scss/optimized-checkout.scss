@@ -1028,6 +1028,10 @@ header.cart-header {
     gap: 80px;
     padding-block: 32px;
 
+    &:before, &:after {
+        content: none;
+    }
+
     @media (min-width: 969px) {
         padding-block: 64px;
     }
