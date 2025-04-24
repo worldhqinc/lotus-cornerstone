@@ -593,6 +593,14 @@ header.cart-header {
     }
 }
 
+.customerEmail-container {
+    .form-actions {
+        @media (min-width: 551px) {
+            max-width: none;
+        }
+    }
+}
+
 .form-field {
     display: flex;
     flex-direction: column;
@@ -670,6 +678,12 @@ header.cart-header {
 .form-field input:focus + .floating-label small {
     line-height: 24px;
     font-size: 14px;
+}
+
+.form-checkbox:checked + .form-label::before,
+.form-radio:checked + .form-label::before {
+    background-color: #6E9365;
+    border-color: #6E9365;
 }
 
 .form-checklist {
