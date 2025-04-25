@@ -6,16 +6,17 @@
 
 <script type="text/javascript" nonce="{{nonce}}">
     window.language = {{{langJson 'optimized_checkout'}}};
+    console.log(window.language.locale);
 </script>
 
 <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
 <script>
     Weglot.initialize({
-        api_key: 'wg_72487831aec25adf255bece854fad4424'
+        api_key: 'wg_72487831aec25adf255bece854fad4424',
         hide_switcher: false,
         cache: true,
     });
-    Weglot.switchLanguage(window.language.locale);
+    Weglot.switchTo(window.language.locale);
 </script>
 
 {{{head.scripts}}}
@@ -32,7 +33,7 @@
             </a>
         </div>
         <div>
-            <a class="checkoutHeader-continueShoppingLink" href="https://lotuscooking.com">
+            <a class="checkoutHeader-continueShoppingLink" href="{{urls.home}}">
                 Continue Shopping
             </a>
         </div>
