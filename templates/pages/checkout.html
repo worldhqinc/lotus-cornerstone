@@ -6,7 +6,6 @@
 
 <script type="text/javascript" nonce="{{nonce}}">
     window.language = {{{langJson 'optimized_checkout'}}};
-    console.log(window.language.locale);
 </script>
 
 <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
@@ -16,7 +15,13 @@
         hide_switcher: false,
         cache: true,
     });
-    Weglot.switchTo(window.language.locale);
+
+    fetch('/api/storefront/carts', {
+        method: 'GET',
+        credentials: 'same-origin',
+    })
+    .then(response => response.json())
+    .then(data => Weglot.switchTo(data[0].locale));
 </script>
 
 {{{head.scripts}}}
