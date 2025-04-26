@@ -12,7 +12,7 @@
 <script>
     Weglot.initialize({
         api_key: 'wg_72487831aec25adf255bece854fad4424',
-        hide_switcher: false,
+        hide_switcher: true,
         cache: true,
     });
 
@@ -21,12 +21,19 @@
         credentials: 'same-origin',
     })
     .then(response => response.json())
-    .then(data => Weglot.switchTo(data[0].locale));
+    .then(data => {
+        if (!data.length) return;
+        setTimeout(() => Weglot.switchTo(data[0]?.locale), 500);
+    });
 </script>
 
 {{{head.scripts}}}
 
 {{/partial}}
+
+<pre>
+{{{JSONstringify this}}}
+</pre>
 
 {{#partial "page"}}
 <header class="checkoutHeader optimizedCheckout-header">
