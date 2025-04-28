@@ -542,6 +542,33 @@ header.cart-header {
 }
 // end checkout header
 
+// checkout button container
+.checkout-button-container {
+    margin: 0;
+    padding: 16px 16px 0 16px;
+
+    @media (min-width: 551px) {
+        padding: 32px 32px 0 32px;
+    }
+
+    p {
+        font-family: "Jost", Arial, Helvetica, sans-serif;
+        font-weight: 500;
+        font-size: 18px;
+        text-transform: uppercase;
+        letter-spacing: 1.8px;
+
+        @media (min-width: 551px) {
+            font-size: 24px;
+        }
+    }
+
+    .checkoutRemote {
+        grid-gap: 30px;
+    }
+}
+// end checkout button container
+
 // checkout steps
 .checkout-steps {
     padding: 0;
