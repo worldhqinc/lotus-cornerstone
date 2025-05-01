@@ -27,6 +27,64 @@
     });
 </script>
 
+<!-- START Google Tag Manager -->
+<script>
+    // 1. Rogue Referral Fix for SPA: Save landing page URL
+    window.dataLayer = window.dataLayer || [];
+    if(typeof landingURL==="undefined") {
+       var landingURL = document.location.protocol + "//" + document.location.hostname + document.location.pathname + document.location.search + document.location.hash;
+    }
+    if(typeof landingURL!=="undefined" && landingURL) {
+      dataLayer.push({
+          "landingURL": landingURL,
+          "originalLocation": landingURL
+      });
+    }
+
+    // 2. Consent Mode DEFAULT - wait_for_tags=500 not need on the onload event
+    function gtag() {dataLayer.push(arguments);}
+    gtag("consent", "default", {
+        "analytics_storage": "denied",
+        "functionality_storage": "denied",
+        "personalization_storage": "denied",
+        "ad_storage": "denied",
+        "ad_user_data": "denied",
+        "ad_personalization": "denied",
+        "security_storage": "granted"
+    });
+
+    // 3. Get Brand and CountryCode
+    var gtm_pageHostname = window.location.hostname; if(gtm_pageHostname) gtm_pageHostname.replace("www.","");
+    var gtm_brand="lotuscooking";  // lotuscooking || cloroxhomeappliances || westonbrands
+    var gtm_countryCode="US"; // US || CA
+
+    // 4. Push to dataLayer
+    dataLayer.push({
+        "cms": "bigcommerce",
+        "brand": gtm_brand,
+        "countryCode": gtm_countryCode
+    });
+
+    // 5. Get gtm_id from DomainName
+    var gtm_id = "GTM-TRN8MB9P";
+
+    // 6. Change all DEV domains to GTM-PBBLKQZ
+    var isDevHostname = /^(.+?\.)?(.*(stage|staging|beta|test).*|mybigcommerce\.com|localhost|local|([0-9]{1,3}\.){3}[0-9]{1,3})$/i;
+    if( isDevHostname.test(gtm_pageHostname)==true ) {
+        gtm_id = "GTM-P9MM6ZN6";
+    }
+    // 7. Load gtm.js library
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+        j.setAttribute('data-cookieconsent', 'ignore');
+        j.setAttribute('data-ot-ignore', '');
+        j.classList.add('optanon-category-C0001');
+        f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer', gtm_id );
+</script>
+<!-- END Google Tag Manager -->
+
 {{{head.scripts}}}
 
 {{/partial}}
