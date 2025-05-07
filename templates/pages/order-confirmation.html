@@ -104,6 +104,15 @@
             </a>
         </h2>
     </div>
+     <div class="checkoutHeader-language">
+        <div class="form-field">
+            <select class="form-select nav-locale-button" name="locale" id="locale" onchange="Weglot.switchTo(this.value)">
+                <option value="en" selected>EN</option>
+                <option value="fr">FR</option>
+                <option value="es">ES</option>
+            </select>
+        </div>
+    </div>
 </header>
 
 {{{ checkout.order_confirmation_content }}}

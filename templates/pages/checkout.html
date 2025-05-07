@@ -104,10 +104,19 @@
                 <img alt="{{settings.store_logo.title}}" class="checkoutHeader-logo" id="logoImage" src="{{cdn 'assets/img/Logo.svg'}}"/>
             </a>
         </div>
-        <div>
-            <a class="checkoutHeader-continueShoppingLink" href="{{urls.home}}">
-                Continue Shopping
-            </a>
+        <div class="checkoutHeader-language">
+            <div class="form-field">
+                <select class="form-select nav-locale-button" name="locale" id="locale" onchange="Weglot.switchTo(this.value)">
+                    <option value="en" selected>EN</option>
+                    <option value="fr">FR</option>
+                    <option value="es">ES</option>
+                </select>
+            </div>
+            <div>
+                <a class="checkoutHeader-continueShoppingLink" href="{{urls.home}}">
+                    Continue Shopping
+                </a>
+            </div>
         </div>
     </div>
 </header>

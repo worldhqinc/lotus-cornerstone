@@ -805,6 +805,12 @@ header.cart-header {
     font-weight: 600;
 }
 
+.checkoutHeader-language {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
 .form-checklist-checkbox~.form-label::before,
 .form-checklist-checkbox~.form-label::after {
     left: 0;
