@@ -467,6 +467,8 @@ header.cart-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
     padding: 0 16px;
     padding-block: 2rem;
 
@@ -1135,7 +1137,18 @@ header.cart-header {
 }
 // end checkout footer
 
-.apple-pay-btn-wrapper {
-    width: 200px; /* apple specified minimum is 175px, there is no maximum */
-    height: 60px; /* apple specified minimum is 32px, maximum is 64px */
-  }
+.form-select.nav-locale-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-width="1" d="M4 6l4 4 4-4"/></svg>');
+    background-size: 16px;
+    background-position: right 16px center;
+    background-repeat: no-repeat;
+    min-width: 100px;
+    padding-right: 40px;
+}
+
+.checkoutHeader-continueShoppingLink {
+    font-size: 16px;
+}
