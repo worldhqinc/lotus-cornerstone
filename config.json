@@ -437,7 +437,15 @@
         ]
       },
       "images": {},
-      "settings": {}
+      "settings": {
+        "applePay-button": "white-border",
+        "googlepay-button-color": "white",
+        "paymentbuttons-provider-sorting": [
+          "googlepay",
+          "applepay"
+        ],
+        "paymentbuttons-container": "large"
+      }
     },
     {
       "name": "Bold",
