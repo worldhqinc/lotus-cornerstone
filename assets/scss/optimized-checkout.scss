@@ -1073,3 +1073,69 @@ header.cart-header {
 .layout-main:has(.orderConfirmation) {
     border: none;
 }
+
+// checkout footer
+.checkout-footer {
+    padding-block: 48px;
+    border-top: 1px solid #EEEEEE;
+
+    .layout {
+        min-height: auto;
+    }
+
+    @media (min-width: 969px) {
+        margin-block-start: 64px;
+    }
+}
+
+.checkout-footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @media (min-width: 969px) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.checkout-footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    list-style: none;
+    margin: 0;
+    @media (min-width: 969px) {
+        flex-direction: row;
+        gap: 32px;
+    }
+}
+
+.checkout-footer-link-item {
+    a {
+        font-size: 14px;
+        font-weight: 400;
+        color: #7D7D7D;
+        line-height: 24px;
+
+        &:hover {
+            color: #6E9365;
+        }
+
+        &:after {
+            content: none !important;
+        }
+    }
+}
+
+.checkout-footer-copyright {
+    font-size: 14px;
+    line-height: 24px;
+    color: #7D7D7D;
+}
+// end checkout footer
+
+.apple-pay-btn-wrapper {
+    width: 200px; /* apple specified minimum is 175px, there is no maximum */
+    height: 60px; /* apple specified minimum is 32px, maximum is 64px */
+  }
