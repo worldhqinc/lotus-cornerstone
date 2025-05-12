@@ -835,6 +835,12 @@ header.cart-header {
     box-shadow: none;
 }
 
+[role="combobox"] {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
 // end form actions
 
 // checkout styles
@@ -1074,6 +1080,21 @@ header.cart-header {
 
 .layout-main:has(.orderConfirmation) {
     border: none;
+}
+
+.checkoutHeader.optimizedCheckout-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline-end: 16px;
+
+    @media (min-width: 767px) {
+        padding-inline-start: 16px;
+        padding-inline-end: 32px;
+    }
 }
 
 // checkout footer
