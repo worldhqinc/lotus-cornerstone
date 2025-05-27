@@ -157,6 +157,9 @@ body {
 .optimizedCheckout-buttonSecondary {
     position: relative;
     isolation: isolate;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background-color: stencilColor("optimizedCheckout-buttonSecondary-backgroundColor");
     border-color: stencilColor("optimizedCheckout-buttonSecondary-borderColor");
     color: stencilColor("optimizedCheckout-buttonSecondary-color");
