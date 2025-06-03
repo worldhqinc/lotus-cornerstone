@@ -557,7 +557,11 @@ header.cart-header {
     }
 
     .checkoutRemote {
-        grid-gap: 30px;
+        grid-gap: 16px 0px;
+
+        @media (min-width: 551px) {
+            grid-gap: 24px;
+        }
     }
 }
 // end checkout button container
@@ -664,6 +668,14 @@ header.cart-header {
         line-height: 24px;
         font-weight: 500;
         color: #131313 !important;
+
+        &:not(:has(small)) {
+            &:after {
+                content: '*';
+                color: #8a8a8a;
+                margin-left: 0.1em;
+            }
+        }
     }
 
     .floating-input,
@@ -764,9 +776,10 @@ header.cart-header {
 }
 
 .customerEmail-container {
-    display: flex;
-    align-items: center;
-    gap: 16px;
+    display: grid;
+    grid-template-columns: 60% 1fr;
+    grid-template-rows: 24px 1fr;
+    gap: 4px 16px;
 
     &:before, &:after {
         content: none;
@@ -774,6 +787,18 @@ header.cart-header {
 
     .form-field:first-child {
         margin-bottom: 16px;
+    }
+
+    .customerEmail-body {
+        grid-row-start: 1;
+        grid-row-end: 3;
+        width: 100%;
+    }
+
+    .customerEmail-action {
+        grid-row-start: 2;
+        grid-row-end: 3;
+        width: 100%;
     }
 
     + p {
@@ -897,6 +922,16 @@ header.cart-header {
 
 .stepHeader {
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+
+    &:not(:has(.stepHeader-actions)) {
+        &:after {
+            content: 'Required Fields *';
+            font-size: 12px;
+        }
+    }
 }
 
 .stepHeader-body {
@@ -1046,6 +1081,10 @@ header.cart-header {
 .cart-priceItem-label > span, .cart-priceItem-value > span {
     font-size: 16px !important;
     line-height: 150% !important;
+}
+
+.cart-priceItem--total .cart-priceItem-value {
+    font-weight: 500;
 }
 
 .dropdown-toggle--select:focus,
@@ -1298,4 +1337,10 @@ p {
 .shippingOptionLabel .shippingOption-price,
 .shippingOption-price {
     font-weight: 500;
+}
+
+.floating-label+.form-field-errors,
+.dynamic-form-field--addressLineAutocomplete.floating-form-field .form-field-errors {
+    padding-top: 4px;
+    margin-top: 0;
 }
