@@ -371,7 +371,6 @@ $optimizedCheckout-input--error-boxShadow: 0 0 3px transparentize(stencilColor("
     background-color: stencilColor("optimizedCheckout-formChecklist-backgroundColor");
     border-color: stencilColor("optimizedCheckout-formChecklist-borderColor");
     color: stencilColor("optimizedCheckout-formChecklist-color");
-    overflow: hidden;
 }
 
 .optimizedCheckout-form-checklist-item {
@@ -1343,4 +1342,33 @@ p {
 .dynamic-form-field--addressLineAutocomplete.floating-form-field .form-field-errors {
     padding-top: 4px;
     margin-top: 0;
+}
+
+
+:where(a, button, input, select, textarea):focus-visible {
+    outline: 2px solid #6E9365 !important;
+    outline-offset: 2px !important;
+}
+
+:where(a):focus-visible {
+    outline-offset: 4px !important;
+    border-radius: 4px !important;
+}
+
+.form-checklist-item:focus-within {
+    outline: 2px solid #6E9365 !important;
+    outline-offset: 2px !important;
+}
+
+.button.dropdown-button.dropdown-toggle--select {
+    border-radius: 8px !important;
+}
+
+.form-checkbox:focus-visible + .form-label:before {
+    outline: 2px solid #6E9365 !important;
+    outline-offset: 2px !important;
+}
+
+.form-checkbox:focus-within .form-checkbox-input {
+    border-color: #6E9365 !important;
 }
