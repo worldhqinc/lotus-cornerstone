@@ -193,7 +193,7 @@ body {
     &:active {
         background-color: stencilColor("optimizedCheckout-buttonSecondary-backgroundColorActive");
         border-color: stencilColor("optimizedCheckout-buttonSecondary-borderColorActive");
-        color: stencilColor("optimizedCheckout-buttonSecondary-colorActive");
+        color: white !important;
     }
 
     &[disabled],
@@ -984,7 +984,7 @@ header.cart-header {
 .button--tertiary:focus,
 .button--tertiary.is-active,
 .button--tertiary.active {
-    color: stencilColor("optimizedCheckout-buttonSecondary-color") !important;
+    color: stencilColor("optimizedCheckout-buttonSecondary-color");
 }
 
 .cart-section {
